@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+
+WorkingDirectory=/home/ubuntu/project/TechnoUtsav
+ExecStart=/home/ubuntu/.local/bin/gunicorn --workers 3 --timeout 600 --bind unix:application.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

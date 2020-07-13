@@ -1,0 +1,16 @@
+flask
+flask-cors
+numpy
+protobuf==3.6.1
+scipy
+Pillow
+tensorflow==1.15
+opencv-python
+matplotlib
+absl-py
+cmake==3.12.0
+imutils
+ffmpy
+lxml
+tqdm
+gevent

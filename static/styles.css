@@ -1,0 +1,162 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+#mainBody {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.lead
+{
+  font-weight: 350;
+  margin-bottom: 2rem;
+}
+
+
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+  padding-top: 10px;
+	text-align: center;
+	height: 60px;
+	background-color: black;
+  display: table-row;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: table;
+}
+
+.footer p {
+  padding-top: 15px;
+  padding-bottom: 0;
+	font-size: 18px;
+  color: #fff;
+  margin-bottom: 0;
+  font-family: 'Itim', cursive;
+}
+
+#loading {
+  display: none;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  margin: auto;
+}
+
+#card1, #card2, #card3
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.team-name
+{
+  font-size: 5rem;
+}
+
+.jumbotron
+{
+  padding: 1.8rem 3rem;
+}
+
+.title
+{
+   font-size: 2rem;
+   font-weight: 350;
+   margin-top: 2rem;
+}
+
+
+
+.message{
+  margin-left: 5rem;
+  margin-right: 5rem;
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  background-color: rgba(241, 242, 243, 0.92);
+  text-align: center;
+}
+
+
+.about-message{
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  background-color: rgba(241, 242, 243, 0.92);
+  text-align: center;
+}
+
+.text-link{
+  font-weight: 520;
+}
+
+.text-dark{
+  font-weight: 495;
+}
+
+@media (max-width: 576px) {
+  .team-name {
+    display: block;
+  }
+
+  .message{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .lead{
+    text-align: justify;
+  }
+
+  .container{
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  .project-title {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-1 mx-auto text-center">
+  <h1 class="display-3 project-title" >Features</h1>
+  <br>
+  <br><br>
+</div>
+
+<div class="container">
+  <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="tab-0" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">What's this app about?</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab-1" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Analysing Images</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab-2" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Analysing Videos</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="tab-content">
+  <div class="tab-pane active container pt-5 pl-5 pr-5" id="home" role="tabpanel" aria-labelledby="tab-0">
+    <br>
+    <p class="text-justify">
+      This web app has two parts - <strong>Weapon Detection</strong> and <strong>People Counter</strong>.
+      <br>
+      <br>
+      With <strong>Weapon Detection</strong>, we can detect weapons including handguns, rifles, pistols, knives, machine guns and sniper rifles in both photos and videos. In both photos and videos, the weapons are clearly indicated by bounding drawn around them in bright colours for easy detection and visibilty.
+    </p>
+    <p class="text-justify">
+      The <strong>People Counter</strong> mode detects the number of people present in an image and displays the count. In videos, this mode draws a horizontal line across the screen, actively tracks the moving people, analyses their direction and accordingly keeps a count of the number of people passing the line in both upward and downward direction.
+    </p>
+    <br>
+    <h3 class="text-center">USES</h3>
+    <p class="text-justify">
+      <br>
+      The <strong>Weapon Detection</strong> feature can be used to filter out images containing dangerous weapons like in social media, particularly to detect content involving guns flagged as NSFW. The video detection feature can be used to integrate with existing CCTV surveillance systems to detect weapons in real-time. A notification system can alert the members of the surveillance team even if they miss anything suspicious when manually inspecting the video feed.
+    </p>
+    <p class="text-justify">
+      This will significantly reduce the response time in dangerous scenarios involving weapons particularly in sensitive installations like airports, nuclear power plants, dams, space centres, etc. Public places like railway stations, bus terminuses, amusement parks, malls and so on. Companies providing security solutions too can benefit as now they'll be able to lessen the amount of human resources allocated on each project and rely on the real-time detection system to zero down on threats. This feature will also be helpful for the human operators too as the system would take a lot of burden off their shoulders and they would be able to work longer hours without feeling fatigued or stressed.
+    </p>
+
+    <p class="text-justify">
+      The <strong>People Counter</strong> feature too has many uses. This feature when implemented in existing CCTV systems can pe put to several uses depending upon the industry it is implemented in. Our app can find application in mass gatherings of people of the scale of Kumbh Mela or Hajj to ensure proper crowd control.Unfortunate incidents like stampedes are not unknown in such gatherings where the number of devotees number in millions. Of course, to implement our app on such a large scale would require strong co-ordination between all the feeds and a robust software that'll able to process that much of data.
+    </p>
+
+    <p class="text-justify">
+      The <strong>tracking feature</strong> included in the app can also be optimised to effectively indicate instances of unnecesary loitering especially in areas which are exposed to security threats. ATMs, airports, warehouses, museums and railway stations can particularly make great use of this to prevent possible crimes. If the alogorithm detects loitering in an area, it can issue a notification to the security operators inspecting the video footage. There can be different levels of notifications which will trigger based on how much time a person loiters in that area. This will help to draw attention to the necessary parts quickly as human error can always creep in especially when the operators are watching a multiple panels of monitors.
+    </p>
+
+    <p class="text-justify">
+      The <strong>counting feature</strong> can also be installed outside a door of a room, auditorium or a cinema hall to get an accurate count of people inside it. This feature, if implemented smartly can also be used to monitor one-way corridors in sensitive installations where movement in only one way is permitted. Violating the direction would instantly issue an alert to the operators and this can be very helpful in early detection of breaches inside a building or a campus. The counting feature can also be coupled with smart air-conditioning systems that operate at different levels of power with respect to the number of people inside a hall, etc. This can help a lot in power savings and when this is analysed on a long-term basis, the savings will be significant. The counting feature can also be used in public spaces like concert halls, sports stadiums, music festivals, etc. where the attendance can be accurately found out. The cameras in the entry/exit gates if equipped with this feature can be very helpful in this regard.
+    </p>
+
+    <br>
+    <br>
+    <div class="text-center">***</div>
+
+    <p class="lead jumbotron about-message">
+      This is a small working prototype or rather a humble effort in this direction. With constant guidance and relentless mentoring, we ernestly believe that we would be able to develop this project into a valuable product so that we can commercialise and capitalise on the endless benefits it'll offer and help make the world a safer place.
+    </p>
+  </div>
+
+  <div class="tab-pane fade in container pt-5 pl-5 pr-5" id="profile" role="tabpanel" aria-labelledby="tab-1">
+    <ul>
+      <li class="mt-5">
+        <h4>Uploading Images</h4>
+        <p class="text-justify">
+          Upload the photos in which you want to see the detections.
+          <br>
+          <strong>Click on Browse.</strong>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/image1.jpg" class="rounded img-fluid" alt="Image tutorial step 1">
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Choosing Images</h4>
+        <p class="text-justify">
+          Navigate to the directory containing your desired images. Select one or more images. Only .JPG/.JPEG photos will be accepted.
+          <br>
+          <br>
+          <strong>Click on Open.</strong>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/image2.jpg" class="rounded img-fluid" alt="Image tutorial step 2">
+          <br>
+          <br>
+          <strong>Click on Upload.</strong>
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Processing...</h4>
+        <p class="text-justify">
+          Please wait while the input images are analysed and the new images are processed and rendered. Each image will take about 20 seconds to fully process.
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/image3.jpg" class="rounded img-fluid" alt="Image tutorial step 3">
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Results</h4>
+        <p class="text-justify">
+          The results will be rendered in a 2-column format which will automatically resize to a single column view on mobile devices. A download button is also provided for easy downloading of the processed images.
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/image4.jpg" class="rounded img-fluid" alt="Image tutorial step 4">
+          <br>
+          For <strong>People Counter</strong> too, the same process is to be followed. In addition to the aforementioned components, a display button will display the number of people detected in the photo. Again, the processed photo can be downloaded with the help of a Download button.
+          <br>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/image5.jpg" class="rounded img-fluid" alt="Image tutorial step 5">
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-pane fade in container pt-5 pl-5  pr-5" id="messages" role="tabpanel" aria-labelledby="tab-2">
+    <ul>
+      <li class="mt-5">
+        <h4>Uploading a video</h4>
+        <p class="text-justify">
+          Upload the video in which you want to see the detections.
+          <br>
+          <strong>Click on Browse.</strong>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/video1.jpg" class="rounded img-fluid" alt="Video tutorial step 1">
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Choosing a Video</h4>
+        <p class="text-justify">
+          Navigate to the directory containing your desired video.
+          Select your desired video file. Only .MP4 video files will be accepted.
+          <br>
+          <br>
+          <strong>Click on Open.</strong>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/video2.jpg" class="rounded img-fluid" alt="Video tutorial step 2">
+          <br>
+          <br>
+          <strong>Click on Upload.</strong>
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Processing...</h4>
+        <p class="text-justify">
+          Please wait while the videos are analysed and the new video is processed, converted and rendered. A 20 second-long usually takes about a minute to process,
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/video3.jpg" class="rounded img-fluid" alt="Video tutorial step 3">
+        </p>
+      </li>
+      <li class="mt-5">
+        <h4>Results</h4>
+        <p class="text-justify">
+          The result will be rendered in a new page. A download button is also provided for easy downloading of the processed video.
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/video4.jpg" class="rounded img-fluid" alt="Video tutorial step 4">
+          <br>
+          <br>
+          For <strong>People Counter</strong> too, the same process is to be followed. The count is <link rel="icon" href="favicon. png" sizes="16x16" type="image/png">displayed on the video itself. Again, the processed video can be downloaded with the help of a Download button.
+          <br>
+          <br>
+          <br>
+          <img src="./static/assets/tutorial/video5.jpg" class="rounded img-fluid" alt="Video tutorial step 5">
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock content %}

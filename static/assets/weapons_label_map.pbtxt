@@ -1,0 +1,23 @@
+item {
+    id: 1
+    name: 'Rifle'
+    display_name: 'Weapon'
+ }
+
+item {
+    id: 2
+    name: 'Handgun'
+    display_name: 'Weapon'
+ }
+
+item {
+    id: 3
+    name: 'Knife'
+    display_name: 'Weapon'
+ }
+
+item {
+    id: 4
+    name: 'Shotgun'
+    display_name: 'Weapon'
+ }

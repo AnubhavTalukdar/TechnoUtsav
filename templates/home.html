@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- HEADER -->
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-1 mx-auto text-center">
+      <h1 class="display-3 project-title" >Smart Surveillance System</h1>
+      <br>
+      <p class="lead mt-3">
+        Choose one of the detection options and upload either an image or a video. The results will be displayed in a new page.
+      </p>
+    </div>
+
+    <div class="accordion" id="mainAccordion">
+
+      <div class="text-center container">
+        <div class="custom-control-inline custom-radio mr-5 ml-4">
+          <input type="radio" data-toggle="collapse" data-target="#wd-interface" value="wd" name="detection" class="custom-control-input" id="customRadio1" required>
+          <label for="customRadio1" class="custom-control-label" style="font-weight: 500;">Weapon Detection</label>
+        </div>
+
+        <div class="custom-control-inline custom-radio">
+          <input type="radio" data-toggle="collapse" data-target="#pc-interface" value="pc" name="detection" class="custom-control-input" id="customRadio2">
+          <label for="customRadio2" class="custom-control-label" style="font-weight: 500;">People Counter</label>
+        </div>
+          <br>
+          <br>
+		  {% if err!="" %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error!</strong> {{err}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+           </div>
+		  {%endif%}
+      </div>
+
+      <br>
+      <br>
+
+
+
+
+      <!-- BODY -->
+      <div class="container" id="content">
+        <div class="collapse multi-collapse" data-parent="#mainAccordion" id="wd-interface">
+          <div class="card-deck text-center">
+            <!-- WD-IMAGE -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Image</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">Multiple <small class="text-muted">/ upload</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li class="mb-2">Upload custom photos for analysis.</li>
+                  <li class="mb-2">Or, you can run the sample photos for a quick check.</li>
+                  <li class="mb-2">Only JPEG(.JPEG/.JPG) images can be uploaded.</li>
+                  <li class="mb-2">Photos shouldn't take long to be analysed.</li>
+                </ul>
+
+                <form id="i_wd" class="text-center" action="/image" method="post" enctype="multipart/form-data">
+                  <div class="input-group">
+                    <label class="input-group-btn">
+                      <span class="btn btn-primary">Browse&hellip; <input type="file" id="image" multiple name="images" accept="image/jpeg, image/jpg" style="display: none;" required></span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+                  <input type="radio" name="iradio1" value="wd" checked hidden>
+                  <button type="submit" class="btn btn-success btn-block">Upload</button>
+                </form>
+                <form class="text-center" action="/sample" method="post">
+                  <input type="radio" name="sample_criteria" value="image_wd" checked hidden>
+                  <button type="submit" class="mt-2 btn btn-outline-primary btn-block">See some samples</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- WD-VIDEO -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Video</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">One <small class="text-muted">/ upload</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li class="mb-2">Upload a custom video for analysis.</li>
+                  <li class="mb-2">Or, you can run the sample video for a quick check.</li>
+                  <li class="mb-2">Only MP4 (.mp4) videos can be uploaded.</li>
+                  <li class="mb-2">Videos will take some time to be analysed.</li>
+                </ul>
+                <form class="" id="v_wd" action="/video" method="post" enctype="multipart/form-data">
+                  <div class="input-group">
+                    <label class="input-group-btn">
+                      <span class="btn btn-primary">Browse&hellip; <input type="file" id="image"  name="videos" accept="video/mp4" style="display: none;" required></span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+                  <input type="radio" name="vradio1" value="wd" checked hidden>
+                  <button type="submit" class="btn btn-success btn-block">Upload</button>
+                </form>
+                <form class="text-center" action="/sample" method="post">
+                  <input type="radio" name="sample_criteria" value="video_wd" checked hidden>
+                  <button type="submit" class="mt-2 btn btn-outline-primary btn-block">See a sample</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse multi-collapse" data-parent="#mainAccordion" id="pc-interface">
+          <div class="card-deck mb-3 text-center">
+            <!-- PC-IMAGE -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Image</h4>
+              </div>
+
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">Multiple <small class="text-muted">/ upload</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li class="mb-2">Upload custom photos for analysis.</li>
+                  <li class="mb-2">Or, you can run the sample photos for a quick check.</li>
+                  <li class="mb-2">Only JPEG(.JPEG/.JPG) images can be uploaded.</li>
+                  <li class="mb-2">Photos shouldn't take long to be analysed.</li>
+                </ul>
+
+                <form id="i_pc" class="text-center" action="/image" method="post" enctype="multipart/form-data">
+                  <div class="input-group">
+                    <label class="input-group-btn">
+                      <span class="btn btn-primary">Browse&hellip; <input type="file" id="image" multiple name="images" accept="image/jpeg, image/jpg" style="display: none;" required></span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+                  <input type="radio" name="iradio2" value="pc" checked hidden>
+                  <button type="submit" class="btn btn-success btn-block">Upload</button>
+                </form>
+                <form class="text-center" action="/sample" method="post">
+                  <input type="radio" name="sample_criteria" value="image_pc" checked hidden>
+                  <button type="submit" class="mt-2 btn btn-outline-primary btn-block">See some samples</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- PC-VIDEO -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Video</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">One <small class="text-muted">/ upload</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li class="mb-2">Upload a custom video for analysis.</li>
+                  <li class="mb-2">Or, you can run the sample video for a quick check.</li>
+                  <li class="mb-2">Only MP4(.mp4) videos can be uploaded.</li>
+                  <li class="mb-2">Videos will take some time to be analysed.</li>
+                </ul>
+                <form class="" id="v_pc" action="/video" method="post" enctype="multipart/form-data">
+                  <div class="input-group">
+                    <label class="input-group-btn">
+                      <span class="btn btn-primary">Browse&hellip; <input type="file" id="image"  name="videos" accept="video/mp4" style="display: none;" required></span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+                  <input type="radio" name="vradio2" value="pc" checked hidden>
+                  <button type="submit" class="btn btn-success btn-block">Upload</button>
+                </form>
+                <form class="text-center" action="/sample" method="post">
+                  <input type="radio" name="sample_criteria" value="video_pc" checked hidden>
+                  <button type="submit" class="mt-2 btn btn-outline-primary btn-block">See a sample</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center" id="loading">
+      <p class="lead mt-3" id="waiting_msg">
+
+      </p>
+
+      <img src="{{url_for('static', filename='./assets/media/loading3.gif')}}" class="rounded img-fluid" alt="Processing...">
+    </div>
+
+
+    <!-- BODY ENDS -->
+
+{% endblock content %}
