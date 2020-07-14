@@ -31,7 +31,7 @@ application = app = Flask(__name__)
 CORS(app)
 
 # run_with_ngrok(app)
-print("v10.19")
+print("v10.25")
 
 
 MEDIA_ADDR = os.path.join(os.getcwd(), "static", "assets", "media")
@@ -41,7 +41,6 @@ SAMPLE_MEDIA_ADDRESS = ""
 
 # Path to frozen detection graph. This is the actual model that is used for the weapons detection.
 PATH_TO_CKPT = "./graph/weapons_v2.pb"
-# List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = "./static/assets/weapons_label_map.pbtxt"
 
 NUM_CLASSES = 4+1
@@ -271,7 +270,6 @@ def image_route_handler():
         PATH_TO_LABELS = "./static/assets/people_label_map.pbtxt"
         people_count.clear()
 
-        print("Checkpoint 1")
 
         num_classes = 90
         detection_graph = tf.Graph()
@@ -283,7 +281,6 @@ def image_route_handler():
                 od_graph_def.ParseFromString(serialized_graph)
                 tf.import_graph_def(od_graph_def, name='')
 
-                print("Checkpoint 2")
 
         label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
         categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=num_classes, use_display_name=True)
@@ -791,16 +788,9 @@ def sample():
 # if __name__ == '__main__':
 #     app.run(host = '0.0.0.0', port=80)
 
-if __name__ == '__main__':
-    app.run(debug=True, host = '0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     app.run(debug=True, host = '0.0.0.0', port=5000)
 
 # FOR FINAL DEPLOYMENT
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0')
-
-
-"""
-# Deploy notes:
-Bugs to be resolved:
-    1. Improve processing speeds.
-"""
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
