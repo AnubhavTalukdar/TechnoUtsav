@@ -1,7 +1,7 @@
 flask
 flask-cors
 numpy
-protobuf==3.6.1
+protobuf==3.15.0
 scipy
 Pillow
 tensorflow==1.15
