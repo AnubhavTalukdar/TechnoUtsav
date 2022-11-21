@@ -4,7 +4,7 @@ numpy
 protobuf==3.6.1
 scipy
 Pillow
-tensorflow==1.15
+tensorflow==2.9.3
 opencv-python
 matplotlib
 absl-py
